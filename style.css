@@ -1,0 +1,943 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;600;700&display=swap');
+:root {
+    /* Brand palette */
+    --primary: #d62828;         /* chili red */
+    --primaryLight: #f77f00;    /* warm orange for hover/accents */
+    --secondary: #fcbf49;       /* golden accent */
+    --secondaryLight: #ffe066;  /* pale gold */
+    --headerColor: #121212;     /* deep charcoal for headings */
+    --bodyTextColor: #2b2b2b;   /* rich neutral for body text */
+    --bodyTextColorWhite: #ffffff;
+
+    /* Type scale */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);  /* 13px - 16px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem); /* 31px - 49px */
+    --bodyFontSize: 1rem;
+
+    /* Spacing */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem; /* 60px - 100px top/bottom */
+}
+
+/* ============================================
+   Global Resets
+   ============================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+                 Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--bodyTextColor);
+    background-color: #fff;
+}
+
+/* Shared text helpers */
+.cs-topper {
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+                 Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .12em;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.cs-title,
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+}
+
+.cs-text,
+p {
+    font-size: var(--bodyFontSize);
+    line-height: 1.6em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+
+/* ============================================
+   NAV (global)
+   ============================================ */
+.cs-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:1rem clamp(1rem,4vw,2rem);
+    position: sticky;   /* change to static if you don't want sticky */
+    top:0;
+    z-index:100;
+    background:rgba(18,18,18,.65);
+    backdrop-filter: blur(6px);
+}
+.cs-brand{
+    font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight:900;
+    color: var(--bodyTextColorWhite);
+    text-decoration:none;
+    letter-spacing:.3px;
+}
+.cs-nav-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    align-items:center;
+    gap:1.25rem;
+}
+.cs-nav-list a{
+    color: var(--bodyTextColorWhite);
+    text-decoration:none;
+    line-height:1;
+    font-weight:600;
+}
+.cs-nav-list a:hover{ color: var(--secondary); }
+
+/* Generic solid button (used across site) */
+.cs-button-solid{
+    font-size: 1rem;
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.25rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--primary);
+    display: inline-block;
+    box-sizing: border-box;
+    transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+.cs-button-solid:hover{
+    transform: translateY(-1px);
+    background: var(--primaryLight);
+    color: #101010;
+}
+
+/* ============================================
+   HERO (Fresh Chili)
+   ============================================ */
+
+/* Mobile first */
+@media (min-width: 0rem) {
+  #hero-1785 {
+    min-height: 100vh;
+    padding: clamp(6rem, 10vw, 9rem) 1rem;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--bodyTextColorWhite);
+    overflow: hidden;
+  }
+
+  #hero-1785 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  #hero-1785 .cs-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+    position: relative;
+    z-index: 2; /* above overlay */
+  }
+
+  /* Logo at top */
+  #hero-1785 .hero-logo {
+    width: min(62vw, 18rem);
+    height: auto;
+    display: block;
+    margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  /* Topper (small line text) */
+  #hero-1785 .cs-topper {
+    font-size: clamp(0.95rem, 2.8vw, 1.125rem);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--secondary); /* warm gold from your palette */
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+  }
+  #hero-1785 .cs-topper::before,
+  #hero-1785 .cs-topper::after {
+    content: "";
+    width: clamp(3rem, 12vw, 5.75rem);
+    height: 2px;
+    background: var(--primary);
+    opacity: .9;
+    display: block;
+  }
+
+  /* Headline */
+  #hero-1785 .cs-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.1;
+    color: #fff;
+    margin: 0;
+    max-width: 22ch;
+  }
+
+  /* Tagline / paragraph */
+  #hero-1785 .cs-text {
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
+    line-height: 1.6;
+    color: #f3f3f3;
+    max-width: 42rem;
+    margin: 0;
+  }
+
+  /* Buttons */
+  #hero-1785 .cs-button-group {
+    display: flex;
+    gap: clamp(0.75rem, 1.6vw, 1rem);
+    margin-top: clamp(0.75rem, 2vw, 1.25rem);
+  }
+
+  /* Filled button (uses your --primary) */
+  #hero-1785 .cs-button-solid {
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 700;
+    padding: 0.9rem 1.8rem;
+    color: #fff;
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .15s ease, background .3s ease, color .3s ease;
+  }
+  #hero-1785 .cs-button-solid:hover {
+    transform: translateY(-1px);
+    background: #fff;
+    color: #1a1a1a;
+  }
+
+  /* Outline button to pair with the solid one */
+  #hero-1785 .cs-button-outline {
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 700;
+    padding: 0.9rem 1.8rem;
+    color: var(--primary);
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .15s ease, background .3s ease, color .3s ease;
+  }
+  #hero-1785 .cs-button-outline:hover {
+    transform: translateY(-1px);
+    background: var(--primary);
+    color: #fff;
+  }
+
+  /* Background image + overlay */
+  #hero-1785 .cs-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  #hero-1785 .cs-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: .6;              /* tweak 0.5–0.75 depending on your photo */
+    z-index: 1;
+  }
+  #hero-1785 .cs-background img,
+  #hero-1785 .cs-background source {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Optional decorative splatters already in your HTML */
+  #hero-1785 .cs-graphic,
+  #hero-1785 .cs-graphic-dark {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    max-width: 1920px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: .6;
+  }
+  /* If you prefer a darker page theme, show the dark graphic */
+  @media (prefers-color-scheme: dark) {
+    #hero-1785 .cs-graphic { display: none; }
+    #hero-1785 .cs-graphic-dark { display: block; }
+  }
+  @media (prefers-color-scheme: light) {
+    #hero-1785 .cs-graphic { display: block; }
+    #hero-1785 .cs-graphic-dark { display: none; }
+  }
+}
+
+/* Desktop / large screens */
+@media (min-width: 87.5rem) {
+  /* Subtle parallax-style effect using background on the wrapper */
+  #hero-1785 .cs-background {
+    background: url("hero.jpg") center / cover no-repeat fixed;
+  }
+  #hero-1785 .cs-background img { display: none; }
+}
+
+/* ============================================
+   MENU GROUP
+   ============================================ */
+@media only screen and (min-width: 0rem) {
+    #cs-menu-group-1040 {
+        text-align: center;
+        height: auto;
+        padding: var(--sectionPadding);
+        background-color: #1a1a1a;
+    }
+    #cs-menu-group-1040 .cs-container {
+        width: 100%;
+        max-width: 34.375rem; /* changes to 1280px at tablet */
+        margin: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+    }
+    #cs-menu-group-1040 .cs-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #cs-menu-group-1040 .cs-icon-wrapper {
+        width: 100%;
+        margin: 0 0 0.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+    }
+    #cs-menu-group-1040 .cs-icon-wrapper:before,
+    #cs-menu-group-1040 .cs-icon-wrapper:after {
+        content: "";
+        width: 50%;
+        max-width: 9.375rem;
+        height: 1px;
+        background: #b4b2c7;
+        opacity: 0.2;
+        position: relative;
+        display: block;
+    }
+    #cs-menu-group-1040 .cs-icon {
+        width: 40%;
+        max-width: clamp(6.25rem, 18vw, 11.25rem); /* 100px - 180px */
+        height: auto;
+        flex: none;
+    }
+    #cs-menu-group-1040 .cs-title {
+        color: var(--bodyTextColorWhite);
+        margin: 0 0 2rem;
+        font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+    #cs-menu-group-1040 .cs-hidden { display: none; }
+
+    /* category buttons */
+    #cs-menu-group-1040 .cs-button-group {
+        width: auto;
+        max-width: 62.5rem;
+        margin: 0 1rem;
+        padding: clamp(1rem, 3vw, 1.75rem) clamp(2rem, 4vw, 3rem);
+        border-radius: 4.375rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: clamp(1.5rem, 2vw, 2.25rem);
+        row-gap: 0.75rem;
+    }
+    #cs-menu-group-1040 .cs-button {
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+        color: #fafbfc;
+        background: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: color 0.3s ease, font-weight 0.3s ease;
+    }
+    #cs-menu-group-1040 .cs-button:hover {
+        color: var(--secondary);
+        cursor: pointer;
+    }
+    #cs-menu-group-1040 .cs-button:after {
+        content: "";
+        position: relative;
+        display: block;
+        width: 0;
+        height: clamp(1rem, 3vw, 1.5rem); /* 16px - 24px */
+        background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ffancy-icon.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: width 0.3s, opacity 0.3s, margin-left 0.3s;
+        filter: hue-rotate(330deg) saturate(1.4);
+    }
+    #cs-menu-group-1040 .cs-button.cs-active {
+        color: var(--bodyTextColorWhite);
+        font-weight: 700;
+    }
+    #cs-menu-group-1040 .cs-button.cs-active:after {
+        width: clamp(1.5625rem, 3vw, 2.25rem);
+        opacity: 1;
+        margin-left: clamp(0.5rem, 0.5vw, 1rem); /* 8px - 16px */
+    }
+
+    #cs-menu-group-1040 .cs-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(2rem, 6vw, 4rem); /* 32px - 64px */
+    }
+    #cs-menu-group-1040 .cs-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+    }
+    #cs-menu-group-1040 .cs-card-group {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        column-gap: 1.25rem;
+        row-gap: clamp(2rem, 6vw, 3.75rem); /* 32px - 60px */
+    }
+    #cs-menu-group-1040 .cs-item {
+        list-style: none;
+        width: 100%;
+        max-width: 36.25rem;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(1rem, 3vw, 2.25rem); /* 16px - 36px */
+    }
+    #cs-menu-group-1040 .cs-picture {
+        width: clamp(4.75rem, 14vw, 10rem);  /* 76px - 160px */
+        height: clamp(4.75rem, 14vw, 10rem);
+        overflow: hidden;
+        display: block;
+        flex: none;
+        position: relative;
+        border-radius: 10px;
+    }
+    #cs-menu-group-1040 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    #cs-menu-group-1040 .cs-h3 {
+        font-size: clamp(1rem, 2vw, 1.5rem); /* 16px - 24px */
+        line-height: 1.2em;
+        font-weight: 700;
+        text-align: left;
+        margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+        color: var(--bodyTextColorWhite);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        gap: 0.75rem;
+    }
+    #cs-menu-group-1040 .cs-h3:after {
+        content: "";
+        width: 50%;
+        height: 1px;
+        background: #b4b2c7;
+        opacity: 0.2;
+        position: relative;
+        display: block;
+        order: 1;
+    }
+    #cs-menu-group-1040 .cs-name {
+        font-size: clamp(1rem, 2vw, 1.5625rem); /* 16px - 20px */
+        line-height: 1.2em;
+        width: auto;
+        max-width: 70%;
+        color: var(--bodyTextColorWhite);
+        flex: none;
+    }
+    #cs-menu-group-1040 .cs-price {
+        font-size: clamp(1rem, 2vw, 1.5625rem); /* 16px - 25px */
+        line-height: clamp(1.75rem, 4vw, 2.875rem); /* 28px - 46px */
+        font-weight: 700;
+        padding: 0 clamp(0.5rem, 1vw, 0.75rem); /* 8px - 12px */
+        color: var(--primary);
+        background-color: transparent;
+        border-radius: 5rem;
+        border: 1px solid #b4b2c7;
+        display: flex;
+        align-items: center;
+        order: 3;
+    }
+    #cs-menu-group-1040 .cs-item-p {
+        font-size: clamp(0.875rem, 2vw, 1rem); /* 14px - 16px */
+        line-height: 1.5em;
+        text-align: left;
+        margin: 0;
+        color: var(--bodyTextColorWhite);
+        opacity: 0.85;
+    }
+    #cs-menu-group-1040 .cs-button-solid {
+        margin: 0;
+    }
+    #cs-menu-group-1040 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+        border-radius: 999px;
+    }
+    #cs-menu-group-1040 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+/* Mobile - 359px */
+@media only screen and (max-width: 22.4375rem) {
+    #cs-menu-group-1040 .cs-picture { display: none; }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #cs-menu-group-1040 .cs-container { max-width: 80rem; }
+    #cs-menu-group-1040 .cs-card-group {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+    }
+    #cs-menu-group-1040 .cs-item { width: 48.5%; }
+}
+
+/* ============================================
+   OUR STORY / MEET THE TEAM
+   ============================================ */
+@media only screen and (min-width: 0rem) {
+    #meet-us-1020 { padding: var(--sectionPadding); }
+    #meet-us-1020 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: clamp(3rem, 6vw, 4rem); /* 48px - 64px */
+    }
+    #meet-us-1020 .cs-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #meet-us-1020 .cs-graphic {
+        width: 100%;
+        max-width: 26.82352941rem;
+        margin: 0 0 1rem 0;
+        opacity:.9;
+    }
+    #meet-us-1020 .cs-title {
+        font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+        color: var(--headerColor);
+    }
+    #meet-us-1020 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.6em;
+        color: var(--bodyTextColor);
+    }
+    #meet-us-1020 .cs-card-group {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: clamp(1rem, 2vw, 1.25rem); /* 16px - 20px */
+    }
+    #meet-us-1020 .cs-item {
+        list-style: none;
+        width: 100%;
+        max-width: 25.8125rem;
+        position: relative;
+        z-index: 1;
+    }
+    #meet-us-1020 .cs-item:hover .cs-picture { background-color: #000; }
+    #meet-us-1020 .cs-item:hover .cs-picture img {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+    #meet-us-1020 .cs-info {
+        width: 85.5%;
+        padding: clamp(1rem, 2vw, 1.5rem); /* 16px - 24px */
+        margin: -3.75rem auto 0;
+        box-sizing: border-box;
+        background-color: #f7f7f7;
+        border-top: 4px solid var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+    }
+    #meet-us-1020 .cs-name {
+        font-size: clamp(1rem, 2vw, 1.5625rem); /* 16px - 25px */
+        font-weight: 700;
+        line-height: 1.2em;
+        margin: 0 0 clamp(0.25rem, 1vw, 0.5rem); /* 4px - 8px */
+        color: var(--headerColor);
+        display: block;
+        transition: color 0.3s;
+        font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+    #meet-us-1020 .cs-job {
+        font-size: clamp(0.875rem, 1.5vw, 1rem); /* 14px - 16px */
+        line-height: 1.5em;
+        color: var(--bodyTextColor);
+        display: block;
+    }
+    #meet-us-1020 .cs-picture {
+        width: 100%;
+        height: clamp(15.375rem, 40vw, 32.25rem); /* 246px - 500px */
+        overflow: hidden;
+        display: block;
+        position: relative;
+        transition: background-color 0.3s;
+        z-index: -1;
+    }
+    #meet-us-1020 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.6s, opacity 0.3s;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #meet-us-1020 .cs-card-group {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        width: 100%;
+    }
+    #meet-us-1020 .cs-item { grid-column: span 4; }
+}
+/* ============================
+   Footer Section
+   ============================ */
+#footer-1390 {
+  padding: var(--sectionPadding);
+  background-color: #1a1a1a; /* dark background */
+  position: relative;
+  z-index: 1;
+}
+
+/* Container */
+#footer-1390 .cs-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top part: Logo + Nav */
+#footer-1390 .cs-top {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding-bottom: clamp(1.5rem, 5vw, 4rem);
+  border-bottom: 1px solid #484848;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Footer Nav Links */
+#footer-1390 .cs-ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+  column-gap: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+#footer-1390 .cs-li {
+  list-style: none;
+}
+
+#footer-1390 .cs-link {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.5em;
+  text-decoration: none;
+  color: #ffffff; /* white links */
+  transition: color 0.3s;
+}
+
+#footer-1390 .cs-link:hover {
+  color: var(--primary); /* highlight color */
+}
+
+/* Logo */
+#footer-1390 .cs-logo {
+  width: 100%;
+  max-width: 13.0625rem;
+  display: block;
+}
+
+#footer-1390 .cs-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bottom section */
+#footer-1390 .cs-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+/* Opening Hours */
+#footer-1390 .cs-hours {
+  text-align: center;
+  color: #ffffff; /* white text */
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+#footer-1390 .cs-hours strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #ffffff; /* white heading */
+}
+
+#footer-1390 .cs-hours ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#footer-1390 .cs-hours li {
+  color: #ffffff; /* white lines */
+  font-size: 0.95rem;
+  line-height: 1.6em;
+}
+
+/* Social Icons */
+#footer-1390 .cs-social {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#footer-1390 .cs-social-li {
+  list-style: none;
+}
+
+#footer-1390 .cs-social-link {
+  width: 2rem;
+  height: 2rem;
+  background-color: #484848;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  color: #ffffff; /* white icon text if any */
+}
+
+#footer-1390 .cs-social-link:hover {
+  background-color: var(--primary);
+}
+
+/* Copyright */
+#footer-1390 .cs-copyright {
+  font-size: 1rem;
+  color: #ffffff; /* white */
+  line-height: 1.5em;
+  margin: 0;
+  text-align: center;
+}
+
+#footer-1390 .cs-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#footer-1390 .cs-copyright-link,
+#footer-1390 .cs-separater {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #ffffff; /* white */
+  transition: color 0.3s;
+}
+
+#footer-1390 .cs-copyright-link:hover,
+#footer-1390 .cs-separater:hover {
+  color: var(--primary); /* highlight */
+}
+
+/* Responsive */
+@media only screen and (min-width: 48rem) {
+  #footer-1390 .cs-top {
+    align-items: flex-start;
+  }
+  #footer-1390 .cs-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  #footer-1390 .cs-flex {
+    margin-left: auto;
+  }
+}
+
+/* ============================================
+   Utility: Open/Closed badge (used in footer)
+   ============================================ */
+.badge{
+    display:inline-block;
+    padding:.22rem .55rem;
+    border-radius:999px;
+    background:#333;
+    color:#fff;
+    font:600 .82rem/1 "Inter", ui-sans-serif, system-ui;
+    margin-left:.4rem;
+}
+.badge.open{ background: #2a9d8f; }
+.badge.closed{ background: #9c1d1d; }
+/* Modal overlay background */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* The modal box */
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Close (X) button */
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #d62828;
+}
+
+/* Smooth fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

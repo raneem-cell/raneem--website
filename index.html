@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fresh Chili — Authentic Thai Food</title>
+  <meta name="description" content="Fresh Chili serves bold, balanced Thai flavours—curries, wok-fried favourites, and street-food classics. Dine-in, takeaway, and catering in Melbourne." />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="cs-nav" aria-label="Primary">
+    <a class="cs-brand" href="#hero-998">Fresh Chili</a>
+    <ul class="cs-nav-list">
+      <li><a href="#hero-998">Home</a></li>
+      <li><a href="#cs-menu-group-1040">Menu</a></li>
+      <li><a href="#meet-us-1020">Our Story</a></li>
+      <li><a href="#footer-1390">Contact</a></li>
+    </ul>
+    <a class="cs-button-solid" href="#footer-1390">Reservations</a>
+  </nav>
+
+  <!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-1785">
+  <div class="cs-container">
+    <div class="cs-content">
+      <!-- Logo on top -->
+      <img src="fresh-chili-footer-logo.png" alt="Fresh Chili Logo" class="hero-logo" />
+
+      <!-- Tagline -->
+      <span class="cs-topper">Authentic Thai Flavours</span>
+
+      <!-- Title -->
+      <h1 class="cs-title">Spice Up Your Dining Experience</h1>
+
+      <!-- Description -->
+      <p class="cs-text">
+        At <strong>Fresh Chili</strong>, we bring you homestyle Thai cooking with fragrant spices,
+        bold flavours, and the perfect balance of sweet, sour, salty, and spicy.
+      </p>
+
+      <!-- Buttons -->
+<div class="cs-button-group">
+  <a href="#cs-menu-group-1040" class="cs-button-solid cs-button1">View Menu</a>
+  <a href="#footer-1390" class="cs-button-outline">Reserve Table</a>
+  <button class="cs-button-outline" onclick="document.getElementById('historyModal').style.display='flex'">
+    History of Our Restaurant
+  </button>
+</div>
+
+<!-- Popup Modal -->
+<div id="historyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('historyModal').style.display='none'">&times;</span>
+    <h2>Our Story</h2>
+    <p>
+      Fresh Chili has been serving Melbourne with authentic Thai flavours since 2005.
+      From humble beginnings as a family-run eatery, we’ve grown into a community
+      favourite known for fragrant curries, sizzling stir-fries, and warm hospitality.
+    </p>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- Background Image -->
+  <picture class="cs-background">
+    <source media="(max-width: 600px)" srcset="hero-m.jpg">
+    <source media="(min-width: 601px)" srcset="hero.jpg">
+    <img loading="lazy" decoding="async" src="hero.jpg" alt="Fresh Thai dishes on table" width="1920" height="1200" aria-hidden="true">
+  </picture>
+
+  <!-- Decorative Graphics -->
+  <img class="cs-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-splatter2.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async">
+  <img class="cs-graphic cs-graphic-dark" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/dark-mode-splatter2.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async">
+</section>
+
+  <!-- MENU -->
+  <div id="cs-menu-group-1040">
+    <div class="cs-container">
+      <div class="cs-content">
+        <h2 class="cs-title">Our Menu</h2>
+
+        <div class="cs-button-group" role="tablist" aria-label="Menu categories">
+          <button class="cs-button cs-active" data-filter="one" role="tab" aria-selected="true">Starters</button>
+          <button class="cs-button" data-filter="two" role="tab" aria-selected="false">Mains</button>
+          <button class="cs-button" data-filter="three" role="tab" aria-selected="false">Curries</button>
+          <button class="cs-button" data-filter="four" role="tab" aria-selected="false">Noodles &amp; Rice</button>
+          <button class="cs-button" data-filter="five" role="tab" aria-selected="false">Desserts</button>
+        </div>
+      </div>
+
+      <!-- ================== Starters ================== -->
+      <div id="cs-menu1-1040" class="cs-menu-group" data-category="one">
+        <section class="cs-menu">
+          <div class="cs-container">
+            <ul class="cs-card-group">
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Vegetable_Spring_Rolls.jpg"
+                       alt="Vegetable Spring Rolls" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Vegetable Spring Rolls (4)</span>
+                    <span class="cs-price">$7.90</span>
+                  </h3>
+                  <p class="cs-item-p">Crispy rolls with glass noodles &amp; veg, sweet chili dip.</p>
+                </div>
+              </li>
+
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Chicken_Satay.jpg"
+                       alt="Chicken Satay" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Chicken Satay (4)</span>
+                    <span class="cs-price">$10.90</span>
+                  </h3>
+                  <p class="cs-item-p">Char-grilled skewers, peanut sauce, cucumber relish.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================== Mains ================== -->
+      <div id="cs-menu2-1040" class="cs-menu-group" data-category="two">
+        <section class="cs-menu">
+          <div class="cs-container">
+            <ul class="cs-card-group">
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Pad_Krapow.jpg"
+                       alt="Pad Krapow (Basil Stir-Fry)" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Pad Krapow (Basil Stir-Fry)</span>
+                    <span class="cs-price">$18.50</span>
+                  </h3>
+                  <p class="cs-item-p">Minced chicken/pork, holy basil, garlic, chili. Fried egg optional.</p>
+                </div>
+              </li>
+
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Cashew_Nut Stir-Fry.jpg"
+                       alt="Cashew Nut Stir-Fry" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Cashew Nut Stir-Fry</span>
+                    <span class="cs-price">$17.90</span>
+                  </h3>
+                  <p class="cs-item-p">Capsicum, onion, toasted cashews, house chili jam.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================== Curries ================== -->
+      <div id="cs-menu3-1040" class="cs-menu-group" data-category="three">
+        <section class="cs-menu">
+          <div class="cs-container">
+            <ul class="cs-card-group">
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Red_Curry (Gaeng Daeng).jpg"
+                       alt="Red Curry (Gaeng Daeng)" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Red Curry (Gaeng Daeng)</span>
+                    <span class="cs-price">$18.90</span>
+                  </h3>
+                  <p class="cs-item-p">Coconut broth, bamboo shoots, Thai basil, kaffir lime.</p>
+                </div>
+              </li>
+
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Green_Curry.jpg"
+                       alt="Green Curry" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Green Curry</span>
+                    <span class="cs-price">$18.90</span>
+                  </h3>
+                  <p class="cs-item-p">Green chili paste, eggplant, coconut milk, sweet basil.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================== Noodles & Rice ================== -->
+      <div id="cs-menu4-1040" class="cs-menu-group" data-category="four">
+        <section class="cs-menu">
+          <div class="cs-container">
+            <ul class="cs-card-group">
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Pad_Thai.jpg"
+                       alt="Pad Thai" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Pad Thai</span>
+                    <span class="cs-price">$17.90</span>
+                  </h3>
+                  <p class="cs-item-p">Rice noodles, tamarind, egg, chives, peanuts, sprouts.</p>
+                </div>
+              </li>
+
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Thai_Fried_Rice.jpg"
+                       alt="Thai Fried Rice" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Thai Fried Rice</span>
+                    <span class="cs-price">$16.50</span>
+                  </h3>
+                  <p class="cs-item-p">Jasmine rice, egg, shallot, tomato, spring onion.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================== Desserts ================== -->
+      <div id="cs-menu5-1040" class="cs-menu-group" data-category="five">
+        <section class="cs-menu">
+          <div class="cs-container">
+            <ul class="cs-card-group">
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img loading="lazy" decoding="async"
+                       src="Mango_Sticky_Rice.jpg"
+                       alt="Mango Sticky Rice" width="160" height="160" />
+                </picture>
+                <div class="cs-info">
+                  <h3 class="cs-h3">
+                    <span class="cs-name">Mango Sticky Rice (Seasonal)</span>
+                    <span class="cs-price">$9.90</span>
+                  </h3>
+                  <p class="cs-item-p">Sweet sticky rice, coconut cream, fresh mango.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <a href="#footer-1390" class="cs-button-solid">Reserve Your Table</a>
+    </div>
+  </div>
+
+<!-- ============================================ -->
+<!--                  Our Story                   -->
+<!-- ============================================ -->
+<section id="meet-us-1020">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h2 class="cs-title">Our Story</h2>
+      <p class="cs-text">
+        We’re a family-run kitchen bringing Melbourne the warmth of Thai home cooking.
+        Every dish balances sweet, sour, salty and spicy, made to your preferred heat.
+        Join us for a cosy dine-in experience or order your favourites to go.
+      </p>
+    </div>
+
+    <ul class="cs-card-group">
+      <!-- Head Chef -->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <img loading="lazy" decoding="async"
+               src="Head_Chef.jpg"
+               alt="Head Chef Somchai" width="305" height="335" />
+        </picture>
+        <div class="cs-info">
+          <span class="cs-name">Somchai</span>
+          <span class="cs-job">Head Chef</span>
+        </div>
+      </li>
+
+      <!-- Sous Chef -->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <img loading="lazy" decoding="async"
+               src="Sous_Chef.jpg"
+               alt="Sous Chef Niran" width="305" height="335" />
+        </picture>
+        <div class="cs-info">
+          <span class="cs-name">Niran</span>
+          <span class="cs-job">Sous Chef</span>
+        </div>
+      </li>
+
+      <!-- Front of House -->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <img loading="lazy" decoding="async"
+               src="Front of the House.jpg"
+               alt="Front of House Anong" width="305" height="335" />
+        </picture>
+        <div class="cs-info">
+          <span class="cs-name">Anong</span>
+          <span class="cs-job">Front of House</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer id="footer-1390">
+    <div class="cs-container">
+      <div class="cs-top">
+        <a aria-label="go back to home" class="cs-logo" href="#hero-998">
+          <img class="cs-logo-img" loading="lazy" decoding="async"
+               src="fresh-chili-footer-logo.png" alt="Fresh Chili Restaurant logo"
+               width="220" height="60" />
+        </a>
+        <ul class="cs-ul">
+          <li class="cs-li"><a href="#hero-998" class="cs-link">Home</a></li>
+          <li class="cs-li"><a href="#cs-menu-group-1040" class="cs-link">Menu</a></li>
+          <li class="cs-li"><a href="#meet-us-1020" class="cs-link">Our Story</a></li>
+          <li class="cs-li"><a href="#footer-1390" class="cs-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="cs-bottom">
+        <ul class="cs-social">
+          <li class="cs-social-li"><a href="#" class="cs-social-link" aria-label="facebook" target="_blank" rel="noopener">Fb</a></li>
+          <li class="cs-social-li"><a href="#" class="cs-social-link" aria-label="instagram" target="_blank" rel="noopener">Ig</a></li>
+          <li class="cs-social-li"><a href="#" class="cs-social-link" aria-label="tiktok" target="_blank" rel="noopener">Tk</a></li>
+        </ul>
+
+        <div class="cs-hours">
+          <strong>Opening Hours <span id="open-badge" class="badge" aria-live="polite"></span></strong>
+          <ul>
+            <li>Mon–Thu: 4:30 pm – 9:00 pm</li>
+            <li>Fri: 4:30 pm – 9:30 pm</li>
+            <li>Sat–Sun: Closed</li>
+          </ul>
+        </div>
+
+        <span class="cs-copyright">
+          &copy; <span id="year"></span> Fresh Chili
+        </span>
+        <div class="cs-flex">
+          <a href="#" class="cs-copyright-link">Privacy Policy</a>
+          <span class="cs-separater">|</span>
+          <a href="#" class="cs-copyright-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
